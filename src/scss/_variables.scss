@@ -1,0 +1,20 @@
+$fa-font-path: "../font";
+$html-font-size: 16;
+$color-white: #fff;
+$color-black: #000;
+$color-turmeric: #d2bd52;
+$color-burnt-turmeric: #554c22;
+
+$primary-font: 'Akira Expanded SuperBold', sans-serif;
+$secondary-font: 'hoss-sharp', sans-serif;
+
+@font-face {
+  font-family: 'Akira Expanded SuperBold';
+  src: url('../font/AkiraExpanded-SuperBold.woff') format('woff'),
+       url('../font/AkiraExpanded-SuperBold.woff2') format('woff2');
+  font-weight: normal;
+}
+
+
+$h1-font: normal 3rem 'Akira Expanded SuperBold', sans-serif;
+$nav-font: normal 1.33rem 'Akira Expanded SuperBold', sans-serif;

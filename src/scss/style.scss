@@ -1,0 +1,415 @@
+@import "variables";
+@import "framework/framework";
+@import "../../node_modules/@fortawesome/fontawesome-pro/scss/fontawesome";
+@import "../../node_modules/@fortawesome/fontawesome-pro/scss/brands";
+@import "../../node_modules/magnific-popup/dist/magnific-popup";
+
+
+html {
+	background: $color-black;
+	font-family: $primary-font;
+	font-size: 16px;
+	line-height: 1;
+	width: 100%;
+	overflow-x: hidden;
+
+	@include desktop-sm-down {
+		font-size: 15px;
+	}
+
+	@include tablet-down {
+		font-size: 14px;
+	}
+
+	@include phone-down {
+		font-size: 13px;
+	}
+
+	@include phone-sm-down {
+		font-size: 12px;
+	}
+}
+
+body {
+	color: $color-white;
+	width: 100%;
+	overflow-x: hidden;
+	position: relative;
+	min-height: 100vh;
+}
+
+a {
+	color: inherit;
+
+	@include hover-focus {
+		color: $color-turmeric;
+	}
+}
+
+a.btn {
+	display: inline-block;
+	border: 1px solid $color-white;
+	padding: rems(8) rems(20);
+
+	@include hover-focus {
+		color: $color-turmeric;
+		border: 1px solid $color-turmeric;
+	}
+}
+
+header {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	z-index: 10;
+	height: 15vh;
+	display: flex;
+	align-items: center;
+
+
+	.container {
+		nav#nav-menu {
+			ul {
+				list-style: none;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: rems(30);
+				padding: 0;
+				margin: 0;
+				max-width: rems(900);
+				margin: 0 auto;
+
+				li.title {
+					font: $nav-font;
+					letter-spacing: -3px;
+
+					@include phone-down {
+						display: none;
+					}
+
+					a.set-home {
+						h1 {
+							font: $h1-font;
+							color: $color-turmeric;
+							padding: 0 rems(50);
+						}
+					}
+				}
+
+				li.nav-item {
+
+					a {
+						font-family: $primary-font;
+						text-transform: uppercase;
+
+						@include phone-down {
+							font-size: rems(24);
+						}
+					}
+				}
+			}
+		}
+
+		h2 {
+			display: none;
+			font-family: $primary-font;
+			text-transform: uppercase;
+			color: $color-turmeric;
+			text-align: center;
+			font: $h1-font;
+			margin: rems(20) 0 0;
+
+			@include phone-down {
+				display: block;
+			}
+		}
+	}
+}
+
+main {
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+	position: relative;
+
+	video {
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 1;
+		overflow-y: hidden;
+	}
+
+	#main-content-wrapper {
+		margin: 15vh 0;
+		height: 70vh;
+		overflow-y: auto;
+		position: relative;
+		z-index: 2;
+
+		section {
+			width: 100%;
+
+			&#music {
+				.container {
+					display: flex;
+					flex-direction: column;
+					gap: rems(60);
+					padding-top: rems(50);
+
+					.item {
+						display: flex;
+
+						@include tablet-down {
+							flex-direction: column;
+							gap: rems(20);
+						}
+
+						.cover {
+							flex: 1;
+
+							img {
+								max-width: rems(400);
+
+								@include tablet-down {
+									margin: 0 auto;
+								}
+							}
+						}
+
+						.info {
+							flex: 1;
+							display: flex;
+							flex-direction: column;
+							justify-content: center;
+							align-items: flex-start;
+							filter: drop-shadow(0 0 5px #000a);
+
+							@include tablet-down {
+								align-items: center;
+								text-align: center;
+							}
+
+							p {
+								text-transform: uppercase;
+								font-weight: 100;
+								font-family: $secondary-font;
+								font-size: rems(18);
+							}
+
+							h2 {
+								text-transform: uppercase;
+								margin-top: 0;
+								margin-bottom: rems(10);
+								max-width: rems(400);
+							}
+						}
+					}
+				}
+			}
+
+			&#tour {
+				.container {
+					#tour-dates {
+						filter: drop-shadow(0 0 5px #000a);
+
+						.event-group {
+							display: flex;
+							gap: rems(16);
+							margin: rems(30) 0;
+
+							@include phone-down {
+								flex-direction: column;
+								text-align: center;
+
+							}
+
+							.event-date {
+								flex: 1;
+								color: $color-turmeric;
+							}
+
+							.event-venue-location {
+								flex: 2;
+
+								.event-venue {}
+
+								.event-location {}
+							}
+
+							.event-links {
+								flex: 1;
+								display: flex;
+								align-items: center;
+								justify-content: flex-end;
+
+								@include phone-down {
+									justify-content: center;
+								}
+
+								a.btn {}
+							}
+						}
+					}
+				}
+			}
+
+			&#merch {
+				.container {
+					height: 60vh;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+				}
+			}
+		}
+	}
+}
+
+footer {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 15vh;
+	z-index: 10;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	ul.social {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		list-style: none;
+		padding: 0;
+		margin: 0 0 rems(40);
+		gap: rems(20);
+
+		li {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			a {
+				transition: all .3s ease-in-out;
+				font-size: rems(30);
+
+				i {}
+
+				img {
+					height: rems(30);
+					width: rems(30);
+				}
+			}
+		}
+	}
+
+	.copyright {
+		font-size: rems(11);
+		font-weight: 400;
+		text-align: center;
+		opacity: .7;
+	}
+}
+
+#newsletter-popup {
+	background-color: $color-black;
+	padding: rems(40) rems(80);
+	position: relative;
+	margin: 0 auto;
+	max-width: rems(900);
+	display: flex;
+	justify-content: center;
+	color: $color-turmeric;
+
+	.mfp-close {
+		opacity: 1;
+		color: $color-turmeric;
+	}
+
+	form {
+		h2 {
+			text-align: center;
+			font-size: rems(44);
+		}
+
+		.inputs-wrap {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+
+			.form-group {
+				width: 100%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				margin-bottom: rems(20);
+
+				input[type="email"],
+				input[type="text"],
+				select {
+					font-size: rems(24);
+					padding: rems(8) 0;
+					width: 100%;
+					flex: 1;
+					background-color: $color-black;
+					color: $color-turmeric;
+					border: none;
+					border-bottom: 2px solid $color-turmeric;
+					margin-bottom: rems(10);
+
+
+					&::placeholder {
+						color: $color-burnt-turmeric;
+					}
+				}
+
+				select:has(option[value=""]:checked) {
+					color: $color-burnt-turmeric;
+				}
+
+				input[type="email"] {
+					width: 100%;
+				}
+
+
+			}
+
+			button.newsletter-submit {
+				background-color: $color-black;
+				border: none;
+				color: $color-turmeric;
+				font-size: rems(30);
+				font-weight: 900;
+			}
+		}
+	}
+}
+
+
+
+#thankyou-popup {
+	background-color: $color-black;
+	padding: rems(120) rems(100);
+	position: relative;
+	margin: 0 auto;
+	max-width: rems(600);
+	display: flex;
+	justify-content: center;
+
+	p {
+		font-size: rems(32);
+		color: $color-turmeric;
+	}
+
+	.mfp-close {
+		opacity: 1;
+		color: $color-turmeric;
+	}
+}
